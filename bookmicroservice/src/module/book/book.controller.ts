@@ -5,7 +5,7 @@ import { BookService } from './book.service'
 import { BookRetrieveAllDto, CreateBookDto } from './dtos'
 
 @Controller()
-export class ProductController {
+export class BookController {
   //book-service-readonly
   readonly #_service: BookService
   //book-service-controller

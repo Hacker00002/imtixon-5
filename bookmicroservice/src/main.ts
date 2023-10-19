@@ -1,8 +1,20 @@
-import { NestFactory } from '@nestjs/core';
-import { AppModule } from './app.module';
-
+import type { MicroserviceOptions } from '@nestjs/microservices'
+import { NestFactory } from '@nestjs/core'
+import { AppModule } from './app.module'
+import { appConfig } from './config'
+import { ValidationPipe } from '@nestjs/common'
+//application
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
-  await app.listen(3000);
+  //create-microservice-app
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, appConfig)
+  //app-use-global
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      stopAtFirstError: true,
+    }),
+  )
+  //app-listen
+  await app.listen()
 }
-bootstrap();
+bootstrap()
