@@ -1,4 +1,12 @@
 {
+  "endOfLine": "lf",
+  "proseWrap": "always",
+  "quoteProps": "consistent",
+  "arrowParens": "always",
+  "trailingComma": "all",
+  "semi": false,
   "singleQuote": true,
-  "trailingComma": "all"
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "printWidth": 200
 }
