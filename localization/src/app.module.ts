@@ -4,8 +4,6 @@ import { PrismaModule } from '@prisma'
 import { LanguageModule, TranslateModule } from '@module'
 import { databaseConfig } from '@config'
 
-console.log(databaseConfig())
-
 @Module({
   imports: [
     ConfigModule.forRoot({
